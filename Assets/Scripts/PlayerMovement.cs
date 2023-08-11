@@ -5,12 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
+    public Camera playerCamera;
     public float mouseSensitivity = 1;
     public float speed = 10;
+
     float _xRot = 0; // the rotation of the camera around the x axis
-
-    public Camera playerCamera;
-
     CharacterController _controller;
 
     void Start()
@@ -42,5 +41,6 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * xMove + transform.forward * yMove;
         move *= speed * Time.deltaTime;
         _controller.Move(move);
+
     }
 }
