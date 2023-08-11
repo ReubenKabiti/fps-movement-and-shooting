@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class PlayerFollower : MonoBehaviour
 {
     NavMeshAgent agent;
-    public Transform player;
+    Transform player;
     public float seekDistance = 3;
     public float attackDistance = 2;
 
@@ -16,6 +16,7 @@ public class PlayerFollower : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         returnPoint = transform.position;
+        player = FindObjectOfType<PlayerMovement>().transform;
     }
 
 
